@@ -13,7 +13,7 @@ public class Stigid {
             //System.out.println(newStr);
 
             int sum = 0;
-
+            //TODO Ask Mr. Moore why this doesn't work with the last example
             while (newStr.length()-nthDigit +1 > 0) {
                 sum = sum+ Integer.parseInt(newStr.substring(0, nthDigit));
                 System.out.println(Integer.parseInt(newStr.substring(0, nthDigit)));
