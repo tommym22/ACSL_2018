@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class Stigid {
+public class Mitchell_Stigid {
     public static void main(String[] args) {
-        for (int i = 5; i >0; i--) {
+        for (int i = 5; i > 0; i--) {
             System.out.println("Please input a valid sequence. This code will run " + i + " more time(s).");
             Scanner reader = new Scanner(System.in);
             String line = reader.nextLine();
