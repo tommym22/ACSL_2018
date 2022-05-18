@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Stigid {
     public static void main(String[] args) {
-        for (int i = 0; i < 5; i++) {
-            System.out.println("Please input a number sequence, followed by a space, and then another number");
+        for (int i = 5; i >0; i--) {
+            System.out.println("Please input a valid sequence. This code will run " + i + " more time(s).");
             Scanner reader = new Scanner(System.in);
             String line = reader.nextLine();
 
@@ -19,5 +19,6 @@ public class Stigid {
             }
             System.out.println("Your Sum is: " + sum);
         }
+        System.out.println("Goodbye!");
     }
 }
