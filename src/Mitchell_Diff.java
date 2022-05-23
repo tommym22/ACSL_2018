@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//TODO ideas, create an array and throw all common strings in there, use recursion? :throwup
 public class Mitchell_Diff {
     public static void main(String[] args) {
         for (int i = 5; i > 0; i--) {
