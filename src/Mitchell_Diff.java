@@ -1,43 +1,33 @@
 import java.util.Scanner;
-//TODO ideas, create an array and throw all common strings in there
 public class Mitchell_Diff {
     public static void main(String[] args) {
         for (int i = 5; i > 0; i--) {
             System.out.println("Please input a valid sequence. This code will run " + i + " more time(s).");
             Scanner reader = new Scanner(System.in);
             String[] line = reader.nextLine().split(" ");
+            String oneString = line[0];
+            String twoString = line[1];
+            String reverseOne = new StringBuilder(oneString).reverse().toString();
+            Strign reverseTwo = new StringBuilder(twoString).reverse().toString();
             String[] commonStrings = {"", "", "", ""};
-            String aString = line[0];
-            String aStringR = line[0];
-            String bString = line[1];
-            String bStringR = line[1];
-            // Go from A To B, L -> R
-            for (int a  = 0; a < bString.length(); a++) {
-                String letter = (line[0].substring(a,a+1));
-                if (bString.contains(letter)) {
-                    commonStrings[0] += letter;
-                    bString = bString.substring(bString.indexOf(letter)-1);
-                }
-            }
-            // Go from B To A, L -> R
-            for (int b  = 0; b < aString.length(); b++) {
-                String letter = (line[1].substring(b,b+1));
-                if (aString.contains(letter)) {
-                    commonStrings[1] += letter;
-                    aString = aString.substring(aString.indexOf(letter)-1);
-                }
-            }
-            //Go From A To B, L -> R
-            for (int c = bStringR.length()-1; c > 1; c--) {
-                String letter = (line[0].substring(c-1, c));
-                if (bStringR.contains(letter)) {
-                    commonStrings[2] += letter;
-                    bStringR = bStringR.substring(bStringR.indexOf(letter)-1);
-                }
-            }
-            
+            commonStrings[0] = findCommonString(oneString, twoString);
+            commonStrings[1] = findCommonString(twoString, oneString);
+            commonStrings[2] = findCommonString();
+
             System.out.println(commonStrings[0] + " " + commonStrings[1] + " " + commonStrings[2]);
         }
+
         System.out.println("Goodbye!");
+    }
+    static String findCommonString(String strOne, String strTwo) {
+        String output = "";
+        for (int a  = 0; a < strTwo.length()+1; a++) {
+            String letter = (strOne.substring(a,a+1));
+            if (strTwo.contains(letter)) {
+                output += letter;
+                strTwo = strTwo.substring(strTwo.indexOf(letter)+1);
+            }
+        }
+        return output;
     }
 }
