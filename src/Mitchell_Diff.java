@@ -23,7 +23,7 @@ public class Mitchell_Diff {
     //Does not work :(
     static String findCommonString(String strOne, String strTwo) {
         String output = "";
-        for (int a  = -1; a < strTwo.length(); a++) {
+        for (int a  = 0; a < strTwo.length(); a++) {
             String letter = (strOne.substring(a,a+1));
             if (strTwo.contains(letter)) {
                 output += letter;
