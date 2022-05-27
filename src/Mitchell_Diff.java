@@ -8,20 +8,22 @@ public class Mitchell_Diff {
             String oneString = line[0];
             String twoString = line[1];
             String reverseOne = new StringBuilder(oneString).reverse().toString();
-            Strign reverseTwo = new StringBuilder(twoString).reverse().toString();
+            String reverseTwo = new StringBuilder(twoString).reverse().toString();
             String[] commonStrings = {"", "", "", ""};
             commonStrings[0] = findCommonString(oneString, twoString);
             commonStrings[1] = findCommonString(twoString, oneString);
-            commonStrings[2] = findCommonString();
+            commonStrings[2] = findCommonString(reverseOne, reverseTwo);
+            commonStrings[3] = findCommonString(reverseTwo,reverseOne);
 
-            System.out.println(commonStrings[0] + " " + commonStrings[1] + " " + commonStrings[2]);
+            System.out.println(commonStrings[0] + " " + commonStrings[1] + " " + commonStrings[2] + " " + commonStrings[3]);
         }
 
         System.out.println("Goodbye!");
     }
+    //Does not work :(
     static String findCommonString(String strOne, String strTwo) {
         String output = "";
-        for (int a  = 0; a < strTwo.length()+1; a++) {
+        for (int a  = -1; a < strTwo.length(); a++) {
             String letter = (strOne.substring(a,a+1));
             if (strTwo.contains(letter)) {
                 output += letter;
