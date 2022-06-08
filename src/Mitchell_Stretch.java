@@ -15,12 +15,7 @@ public class Mitchell_Stretch {
             ArrayList<Integer> blockedSpaces = new ArrayList<Integer>();
             for (int a = 4; a < line.length; a++) {
                 blockedSpaces.add(Integer.parseInt(line[a]));
-            }
-            int startPiece = Integer.parseInt(line[2]);
-            //Use the fillGrid method to add numbers and blocked Spaces and the starting piece.
-            grid = fillGrid(grid, blockedSpaces, startPiece);
-            //use the placePieces method to place the pieces and print out that result
-            System.out.println(placePieces(grid));
+
         }
         reader.close();
     }
